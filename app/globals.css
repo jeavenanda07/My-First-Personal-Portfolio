@@ -42,3 +42,16 @@ body {
   background-color: #262626;
   border-radius: 50%;
 }
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
