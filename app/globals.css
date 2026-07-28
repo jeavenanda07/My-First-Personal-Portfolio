@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F6F6F6;
   --foreground: #171717;
+  --primary: #A3A7A8
 }
 
 @theme inline {
@@ -22,5 +23,22 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+.hero{
+  background-image: url('/jeaven-paras-2.png');
+  background-size: cover;      /* Scales the image to cover the entire background */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat;
+}
+
+.navigation{
+  background-color: #171717;
+  box-shadow: 0px 0px 10px rgba(223, 223, 223, 0.5);
+}
+
+.navigation > li {
+  background-color: #262626;
+  border-radius: 50%;
 }
