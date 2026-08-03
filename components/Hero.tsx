@@ -15,7 +15,7 @@ const Hero = () => {
 
         <div className='flex relative flex-col items-center justify-center h-full text-center  '>
           <div className='absolute bottom-10 w-dvw overflow-hidden pointer-events-none'>
-            <div className='marquee-track flex whitespace-nowrap'>
+            <div className='marquee-track w-full flex whitespace-nowrap'>
               {/* Two identical copies placed back to back so the loop is seamless */}
               <span className='font-extrabold text-[20vh] text-white pr-16'>
                 {TAGLINE}
