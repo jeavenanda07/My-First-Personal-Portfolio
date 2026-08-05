@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { ArrowBigDown } from 'lucide-react'
-
 
 const Logo = ({ className = '' }) => {
   return (
@@ -15,21 +15,29 @@ const Logo = ({ className = '' }) => {
   )
 }
 
-
 const Header = () => {
   return (
     <div className='w-full flex justify-between items-center text-white font-extralight text-sm'>
-      <div className='absolute top-6 left-0 flex items-center gap-2 text-xs text-white/80'>
-          <span className='h-2 w-2 rounded-full bg-green-400 animate-pulse' />
-          Available for opportunities
-      </div> 
-      
-      <p className='absolute top-6 right-0 max-w-[26em] text-right text-sm text-white/70 leading-relaxed'>
-          Passionate creative designer and developer, dedicated to crafting
-          innovative solutions and exceptional digital experiences through
-          modern technologies.
-        </p>
-    
+      <motion.div
+        className='absolute top-6 left-0 flex items-center gap-2 text-xs text-white/80'
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+      >
+        <span className='h-2 w-2 rounded-full bg-green-400 animate-pulse' />
+        Available for opportunities
+      </motion.div>
+
+      <motion.p
+        className='absolute top-6 right-0 max-w-[26em] text-right text-sm text-white/70 leading-relaxed'
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+      >
+        Passionate creative designer and developer, dedicated to crafting
+        innovative solutions and exceptional digital experiences through
+        modern technologies.
+      </motion.p>
     </div>
   )
 }
@@ -50,51 +58,88 @@ const Hero = () => {
         <Header />
 
         <div className='flex relative flex-col items-center justify-center h-full text-center'>
-
           <div className='absolute bottom-10 w-dvw overflow-hidden pointer-events-none'>
-            <div className='marquee-track w-full flex whitespace-nowrap'>
+            <motion.div
+              className='marquee-track w-full flex whitespace-nowrap'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+            >
               <span className='font-extrabold text-[20vh] text-white pr-16'>
                 {TAGLINE}
               </span>
               <span className='font-extrabold text-[20vh] text-white pr-16'>
                 {TAGLINE}
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
 
-
-        <div className='absolute bottom-6 left-0 z-20'>
+        <motion.div
+          className='absolute bottom-6 left-0 z-20'
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+        >
           <Logo />
-        </div>
+        </motion.div>
 
-        <div className='absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3'>
+        <motion.div
+          className='absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
+        >
           {SOCIALS.map(({ icon, href, label }, i) => (
-            <Link
+            <motion.div
               key={i}
-              href={href}
-              target={href.startsWith('http') ? '_blank' : undefined}
-              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              aria-label={label}
-              className='h-10 w-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center overflow-hidden hover:bg-white/20 transition-colors'
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.6 + i * 0.08 }}
             >
-              <Image
-                src={icon}
-                alt=""
-                width={24}
-                height={24}
-                className='object-contain'
-              />
-            </Link>
+              <Link
+                href={href}
+                target={href.startsWith('http') ? '_blank' : undefined}
+                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                aria-label={label}
+                className='h-10 w-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center overflow-hidden hover:bg-white/20 transition-colors'
+              >
+                <Image
+                  src={icon}
+                  alt=""
+                  width={24}
+                  height={24}
+                  className='object-contain'
+                />
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className='absolute bottom-6 right-0 z-20 flex flex-col items-center gap-1 text-white/50 text-[10px] tracking-widest'>
+        <motion.div
+          className='absolute bottom-6 right-0 z-20 flex flex-col items-center gap-1 text-white/50 text-[10px] tracking-widest'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 }}
+        >
           SCROLL
-         <ArrowBigDown className='w-4 h-4 animate-bounce' />
-        </div>
+          <ArrowBigDown className='w-4 h-4 animate-bounce' />
+        </motion.div>
       </div>
 
+      <style jsx>{`
+        .marquee-track {
+          animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   )
 }
