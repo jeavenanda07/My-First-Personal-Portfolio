@@ -4,8 +4,6 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-// Each icon points to an image path — drop your own logo images into
-// /public/icons/ using these filenames (or update the paths to match yours)
 const SKILL_CATEGORIES = [
   {
     title: 'Front-End Development',
@@ -48,7 +46,7 @@ const SKILL_CATEGORIES = [
     description:
       'Effectively managing code and collaborating on projects to ensure seamless teamwork.',
     type: 'icons',
-    items: ['/icons/github.png', '/icons/git.png'],
+    items: ['/icons/github.webp', '/icons/git.png'],
   },
   {
     title: 'UI/UX Design',
@@ -87,7 +85,6 @@ const TechnicalSkills = () => {
     <section className="w-full px-10 py-24">
       <div className="max-w-[1920px] w-full m-auto">
 
-        {/* Header — big title left, caption right */}
         <motion.div
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -104,7 +101,6 @@ const TechnicalSkills = () => {
           </p>
         </motion.div>
 
-        {/* 3-column grid of skill cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:w-[80%] m-auto">
           {SKILL_CATEGORIES.map((category, i) => (
             <motion.div
@@ -156,7 +152,6 @@ const TechnicalSkills = () => {
           ))}
         </div>
 
-        {/* Full-width Core CS Concepts card */}
         <motion.div
           className="bg-[#171717] rounded-2xl p-8 mt-6 md:w-[80%] m-auto"
           initial={{ opacity: 0, y: 30 }}

@@ -4,15 +4,17 @@ import ProjectLists from '@/components/ProjectLists'
 import Menu from '@/components/Menu'
 import AboutMe from '@/components/AboutMe'
 import TechSkills from '@/components/TechSkills'
+import Footer from '@/components/Footer'
 
 const page = () => {
   return (
     <div>
       <Hero />
-      <Menu />
+      {/* <Menu /> */}
       <AboutMe />
       <ProjectLists />
       <TechSkills />
+      <Footer />
     </div>
   )
 }
