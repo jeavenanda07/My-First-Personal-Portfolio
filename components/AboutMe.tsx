@@ -68,14 +68,15 @@ const AboutMe = () => {
 
             {/* Circular arrow link styled to match the hero's "View more" button */}
             <a
-              href="#contact"
+              href="/resume.pdf"
               aria-label="Get in touch"
               className="group flex items-center gap-3 text-sm font-medium mt-2 w-fit"
+              download="Jeaven Paras Resume"
             >
               <span className="h-10 w-10 rounded-full border border-slate-400 flex items-center justify-center transition-all group-hover:bg-slate-200 group-hover:scale-105">
                 <ArrowUpRight className="w-4 h-4" strokeWidth={1.5} />
               </span>
-              Get in touch
+              Download my resume
             </a>
           </motion.div>
 

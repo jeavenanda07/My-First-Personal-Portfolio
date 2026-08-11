@@ -38,7 +38,6 @@ const SKILL_CATEGORIES = [
     items: [
       '/icons/Javascript.png',
       '/icons/java.png',
-      '/icons/python.png',
     ],
   },
   {
@@ -71,7 +70,6 @@ const SKILL_CATEGORIES = [
 const CORE_CS_TAGS = [
   'Operating Systems',
   'Object-Oriented Programming',
-  'DSA',
   'System Design',
 ]
 
