@@ -57,12 +57,12 @@ const AboutMe = () => {
           
             <div className='flex gap-10 pt-4 border-t border-slate-400'>
               <div>
-                <p className='text-2xl font-semibold'>4+</p>
-                <p className=' text-xs tracking-wide'>PROJECTS SHIPPED</p>
+                <p className='text-2xl font-semibold'>4</p>
+                <p className=' text-xs tracking-wide'>PROJECTS</p>
               </div>
               <div>
-                <p className='text-2xl font-semibold'>3</p>
-                <p className=' text-xs tracking-wide'>YEARS CODING</p>
+                <p className='text-2xl font-semibold'>1</p>
+                <p className=' text-xs tracking-wide'>YEAR CODING</p>
               </div>
             </div>
 
